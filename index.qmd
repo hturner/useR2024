@@ -1,0 +1,285 @@
+---
+title: The R Contribution Working Group
+author: Heather Turner
+date: 2024-07-10
+date-format: long
+format: 
+  warwickpres-revealjs: 
+    title-slide-attributes: 
+      data-background-image: warwick-logo-white.png
+      data-background-size: 15%
+      data-background-position: 100% 0%
+### To remove the logo from the title page, 
+### delete lines 7-12 above and uncomment the two lines below
+#format:
+#  warwickpres-revealjs: default
+---
+
+## The beginnings
+
+2020 was a time of reflection
+
+* [Moving Forwards: Greater Equity and Inclusion in the R Community](https://www.heatherturner.net/talks/celebration2020/), celebRation 2020
+
+* useR! panel
+
+## Sustainability 
+
+Those who contributed the most to R early on are now near the end of their careers, only partially replaced by new contributors.
+
+```{r}
+#| fig.align: center
+knitr::include_graphics("figures/r_core_commits.png")
+```
+
+## Formation of RCWG
+
+Kick-off
+
+* Supporting infrastructure
+* Learning
+* Doing
+
+# Supporting infrastructure {.inverse}
+
+## Improved communications
+
+<https://contributor.r-project.org>
+
+:::: {.columns}
+
+::: {.column width="60%"}
+<a href="https://contributor.r-project.org/">
+  <img src="images/R_Contributor_Site.png">
+</a>
+:::
+
+::: {.column width="40%"}
+* Improved website on R-project.org domain
+    * Joining page for Slack
+    * Links to R Dev Guide and useR! tutorials
+    * Event calendar
+* New Twitter account: [@_R_Contributors](https://twitter.com/R_Contributors)
+:::
+
+::::
+
+## Weblate interface
+
+Set up summer 2022 by Gergely Daróczi  
+<https://translate.rx.studio>
+
+:::: {.columns}
+
+::: {.column width="60%"}
+```{r, out.width = "90%"}
+#| echo: false
+#| eval: true
+#| fig-align: "center"
+#| fig-alt: "Screenshot from Weblate"
+knitr::include_graphics('images/weblate.png')
+```
+:::
+
+::: {.column width="40%"}
+- Web interface makes it easy to work on translations for R
+- [useR! 2022 Poster](https://daroczig.github.io/slides/2022-06-22-useR_2022_poster-Gergely_Daroczi-Internationalization_of_R_packages_with_r18r.pdf)
+:::
+
+::::
+
+## GSoC 2023: R Dev Container
+
+Atharva Shirdhankar, supervised by Heather Turner and James Tripp
+<https://github.com/r-devel/r-dev-env/>
+
+- GitHub Codespace: 
+   - Linux container set up to build R from source
+   - VS Code IDE for working with R and C files
+- Documentation
+   - README on GitHub repo
+   - Markdown included in container for copy-paste
+   
+# Learning {.inverse}
+
+## R Development Guide
+
+R Foundation funded 12 week project. Saranjeet Kaur Bhogal (technical writer), Heather Turner and Michael Lawrence (supervisors).  
+<https://contributor.r-project.org/rdevguide/>
+
+:::: {.columns}
+
+::: {.column width="60%"}
+![](images/r_dev_guide.png)
+:::
+
+::: {.column width="40%"}
+* Novice-friendly
+* Installing R-devel on Windows
+* Bug Tracking
+* Bug Review ([R Can Use Your Help: Reviewing Bug Reports](https://blog.r-project.org/2019/10/09/r-can-use-your-help-reviewing-bug-reports/))
+:::
+
+::::
+
+## Collaboration Campfires
+
+[Code for Science & Society Digital Infrastructure Incubator project](https://www.codeforsociety.org/incubator/projects/building-community-around-the-r-development-guide)
+with Saranjeet Kaur Bhogal
+
+:::: {.columns}
+
+::: {.column width="60%"}
+- Series of four 90-minute sessions introducing ways to contribute
+- Informal, exploratory, interactive
+- Targeted outreach to people from underrepresented groups
+
+:::
+
+::: {.column width="40%"}
+![](images/collaboration-campfires.jpg)
+:::
+
+::::
+
+## C book club for R contributors 
+
+<https://github.com/r-devel/c-book-club/>
+
+- For existing/aspiring R contributors wanting to learn/refresh their C programming skills.
+- Every two weeks, two time zones
+- Main reading: [Modern C](https://gustedt.gitlabpages.inria.fr/modern-c/) by Jens Gustedt
+- Exercises from [C Programming: A Modern Approach](http://knking.com/books/c2/) by K. N. King.
+- Slides available for chapters 1-13
+
+## useR! 2021 tutorials
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+[Contributing to R](https://contributor.r-project.org/tutorials/contributing-to-r), Gabriel Becker and Martin Maechler, useR! 2021. 2h15 video (or 1h30 abridged).
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/CZmldTOdlRM" title="Contributing to R" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+:::
+
+::: {.column width="50%"}
+
+[Translating R to your Language](https://contributor.r-project.org/tutorials/translating-r-to-your-language/), Michael Chirico and Michael Lawrence, useR! 2021. 1h30 video. 
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/S3Qhqf9u6ao" title="Translating R to your language" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+</iframe>
+
+:::
+
+::::
+
+Follow the links for further detail, with slides and exercises.
+
+# Doing {.inverse}
+
+## R Contribution Office Hours
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](images/office-hours.png)
+:::
+
+::: {.column width="60%"}
+- Started November 2022
+- Monthly, 2nd Thursday
+- Two time-zones (10am and 5:30pm UTC)
+- Informal opportunity to work on any aspect of contributing to R
+- Has led to [bug fixes](https://bugs.r-project.org/show_bug.cgi?id=16158)
+:::
+
+::::
+
+## Bug BBQ (useR! 2022)
+
+::::{.columns}
+::: {.column width="60%"}
+- Global, online, 24-hour event to work on open bugs.
+- ~20 participants, new and experienced - a good range
+  - [Good for collaboration, learning experience]{.smaller75}
+- 22 bugs identified for event
+  - [9 not addressed, 3 unresolved, 10 fixed or almost fixed]{.smaller75}
+  - [Good progress on bugs and prompt to act]{.smaller75}
+- [Full report](https://github.com/r-devel/rcontribution/blob/main/bug_bbq/Bug_BBQ_retrospective.md)
+
+:::
+
+::: {.column width="40%"}
+![This image was created by [Sciberia](https://www.scriberia.com) for The Turing Way community and is used under CC-BY license.](images/bug-catching.jpg)
+:::
+
+::::
+
+## R Project Sprint 2023
+
+- Collaborate on contributions to base R
+- ~50 participants, range of experience
+- A diverse group
+- Several have engaged with past RCWG events and initiatives
+- Taking place at The University of Warwick, Aug 30--Sept 1st 2023
+- <https://contributor.r-project.org/r-project-sprint-2023/>
+- Will report after the event
+
+## R Dev Days
+
+## Future Plans
+
+## Get involved
+
+
+```{=html}
+<!-- needs to be last chunk of presentation otherwise creates an extra slide -->
+<!-- requires Quarto v1.3 -->
+<!-- tint80 for border, tint20 for title -->
+<!-- this should hopefully no longer be necessary in a future version of Quarto -->
+<!-- https://github.com/quarto-dev/quarto-cli/issues/5038 -->
+<style type="text/css">
+div.callout-note {
+  border-left-color: #00A9CE !important;
+}
+
+div.callout-note.callout-style-default .callout-title {
+  background-color: #B3E5F0 !important;
+}
+
+div.callout-warning {
+  border-left-color: #CB333B !important;
+}
+
+div.callout-warning.callout-style-default .callout-title {
+  background-color: #EEC3C3 !important;
+}
+
+div.callout-tip {
+  border-left-color: #6DCDB8 !important;
+}
+
+div.callout-tip.callout-style-default .callout-title {
+  background-color: #D3F0EB !important;
+}
+
+div.callout-important {
+  border-left-color: #F1BE48 !important;
+}
+
+div.callout-important.callout-style-default .callout-title {
+  background-color: #FAECC8 !important;
+}
+
+div.callout-caution {
+  border-left-color: #E87722 !important;
+}
+
+div.callout-caution.callout-style-default .callout-title {
+  background-color: #F8D5BC !important;
+}
+</style>
+```
