@@ -1,0 +1,228 @@
+---
+title: A University of Warwick Presentation
+subtitle: Subtitle
+author: Your Name
+date: last-modified
+date-format: long
+format: 
+  warwickpres-revealjs: 
+    title-slide-attributes: 
+      data-background-image: warwick-logo-white.png
+      data-background-size: 15%
+      data-background-position: 100% 0%
+### To remove the logo from the title page, 
+### delete lines 7-12 above and uncomment the two lines below
+#format:
+#  warwickpres-revealjs: default
+---
+
+## Introduction
+
+This is a Quarto presentation format that is consistent with The University of Warwick's [brand](https://warwick.ac.uk/about/brand/), especially its [colours](https://warwick.ac.uk/about/brand/brand-guidelines/colours/) and [typography](https://warwick.ac.uk/about/brand/brand-guidelines/typography/).
+
+It also features the University of Warwick logo on the title slide.
+
+. . .
+
+:::{.callout-note}
+To remove the logo from the title slide, delete the replace lines 7-12 of this `.qmd` file and uncomment lines 15-16.
+:::
+
+:::{.notes}
+Speaker notes go here.
+:::
+
+# inverse class for section headings {.inverse}
+
+## {.inverse .center-h .center .larger125}
+
+inverse class is also useful for stressing *key points*. 
+
+## Colours
+
+There's a colour for inline code such as `x <- c(1, 3, 6)` and `{.inverse}`.
+
+There's also a colour for short [links](https://github.com/Warwick-Stats-Resources/warwickpres) and full ones like <https://quarto.org/docs/presentations/revealjs/>.
+
+## Colours {.inverse}
+
+There's a colour for inline code such as `x <- c(1, 3, 6)` and `{.inverse}`.
+
+There's also a colour for short [links](https://github.com/Warwick-Stats-Resources/warwickpres) and full ones like <https://quarto.org/docs/presentations/revealjs/>.
+
+- The inline code and link colours change when the inverse class is applied.
+
+## Code
+
+The extension includes a custom syntax highlighting theme:
+
+```{r}
+#| echo: true
+#| eval: false
+library(dplyr)
+library(palmerpenguins)
+
+penguins %>%
+  mutate(
+    long_flipper = case_when(
+      species == "Adelie" & flipper_length_mm > 195 ~ TRUE,
+      species == "Chinstrap" & flipper_length_mm > 200 ~ TRUE,
+      species == "Gentoo" & flipper_length_mm > 225 ~ TRUE,
+      TRUE ~ FALSE
+    )
+  ) %>%
+  mutate(
+    body_mass_kg = body_mass_g / 1000,
+    bill_length_cm = bill_length_mm / 10,
+    bill_depth_cm = bill_depth_mm / 10
+  )
+```
+
+## warwickplots
+
+For plotting, the warwickpres extension goes hand-in-hand with the **warwickplots** R package, which provides colour palettes and a ggplot2 theme, `theme_warwick()`, that are also consistent with the University of Warwick's branding.
+
+<https://warwick-stats-resources.github.io/warwickplots/>
+
+```{r}
+#| echo: false
+library(warwickplots)
+plot(warwick_palettes)
+```
+
+
+## warwickplots example
+
+```{r}
+#| echo: true
+#| output-location: slide
+#| code-line-numbers: "|9,15"
+library(ggplot2)
+library(warwickplots)
+library(palmerpenguins)
+
+ggplot(penguins, aes(flipper_length_mm, body_mass_g, group = species)) +
+  geom_point(aes(colour = species, shape = species), 
+             alpha = 0.8, 
+             size = 2) +
+  scale_color_palette_d(warwick_palettes$primary) +
+  labs(title = "Penguin Size, Palmer Station LTER",
+       subtitle = "Flipper length and body mass for **<span style = 'color:#3C1053;'>Adelie</span>**, **<span style = 'color:#6DCDB8;'>Chinstrap</span>** and **<span style = 'color:#CB333B;'>Gentoo</span>** Penguins. This is based on data made available in the **palmerpenguins** R package.",
+       caption = "Visualization: Ella Kaye, Data: Gorman, Williams & Fraser (2014) DOI: 10.1371/journal.pone.009008",
+       x = "flipper length (mm)",
+       y = "body mass (g)") +
+  theme_warwick() +
+  theme(legend.position = 'none')
+```
+
+## Callouts {.smaller60}
+
+There are custom colours for callouts: 
+
+:::{.callout-note}
+A note
+:::
+
+:::{.callout-warning}
+A warning
+:::
+
+:::{.callout-important}
+Something important
+:::
+
+:::{.callout-tip}
+This is a good idea
+:::
+
+:::{.callout-caution}
+Be careful about doing this
+:::
+
+These require a raw html chunk at the end of the presentation `.qmd` file (included in template). Callouts do **not** look good on the inverse background.
+
+
+# Non-Warwick-specific nice-to-haves {.inverse}
+
+## Alignment
+
+There are classes to help with text alignment:
+
+:::{.center-h}
+`{.center-h}` gives horizontally-centered text
+:::
+
+:::{.right}
+`{.right}` gives right-aligned text
+:::
+
+:::{.callout-note}
+For all revealjs Quarto presentations, applying `{.center}` to the slide title vertically centers the whole slide.
+:::
+
+## Sizing
+
+There are classes to help size text by a given percentage:
+
+[`{.smaller90}`]{.smaller90}, [`{.smaller80}`]{.smaller80}, [`{.smaller75}`]{.smaller75}
+[`{.smaller70}`]{.smaller70}, [`{.smaller60}`]{.smaller60}, [`{.smaller50}`]{.smaller50}
+
+[`{.larger125}`]{.larger125}, [`{.larger150}`]{.larger150}, [`{.larger175}`]{.larger175}, 
+[`{.larger200}`]{.larger200}, [`{.larger250}`]{.larger250}
+
+## More information
+
+You can learn more about Quarto Revealjs presentations at <https://quarto.org/docs/presentations/revealjs/>
+
+You can learn more about Quarto extensions at <https://quarto.org/docs/extensions/>
+
+You can find these slides at <https://warwick-stats-resources.github.io/warwickpres/>
+
+```{=html}
+<!-- needs to be last chunk of presentation otherwise creates an extra slide -->
+<!-- requires Quarto v1.3 -->
+<!-- tint80 for border, tint20 for title -->
+<!-- this should hopefully no longer be necessary in a future version of Quarto -->
+<!-- https://github.com/quarto-dev/quarto-cli/issues/5038 -->
+<style type="text/css">
+div.callout-note {
+  border-left-color: #00A9CE !important;
+}
+
+div.callout-note.callout-style-default .callout-title {
+  background-color: #B3E5F0 !important;
+}
+
+div.callout-warning {
+  border-left-color: #CB333B !important;
+}
+
+div.callout-warning.callout-style-default .callout-title {
+  background-color: #EEC3C3 !important;
+}
+
+div.callout-tip {
+  border-left-color: #6DCDB8 !important;
+}
+
+div.callout-tip.callout-style-default .callout-title {
+  background-color: #D3F0EB !important;
+}
+
+div.callout-important {
+  border-left-color: #F1BE48 !important;
+}
+
+div.callout-important.callout-style-default .callout-title {
+  background-color: #FAECC8 !important;
+}
+
+div.callout-caution {
+  border-left-color: #E87722 !important;
+}
+
+div.callout-caution.callout-style-default .callout-title {
+  background-color: #F8D5BC !important;
+}
+</style>
+```
