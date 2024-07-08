@@ -15,17 +15,14 @@ format:
 #  warwickpres-revealjs: default
 ---
 
-## The beginnings
-
-2020 was a time of reflection
+## 2020 was a time of reflection...
 
 * [Moving Forwards: Greater Equity and Inclusion in the R Community](https://www.heatherturner.net/talks/celebration2020/), celebRation 2020
 
-* useR! panel
+* [useR! 2020 panel](https://youtu.be/X_eDHNVceCU?list=PL4IzsxWztPdltBEpbd5B0jLJS13xAyq5n&t=7232)
+![](images/rcore.png){alt="11 members of R Core on a video call for useR! 2020 R Core Panel"}
 
-## Sustainability 
-
-Those who contributed the most to R early on are now near the end of their careers, only partially replaced by new contributors.
+## The long view: R Core Commits 1997 - 2024
 
 ```{r}
 #| fig.align: center
@@ -34,13 +31,19 @@ knitr::include_graphics("figures/r_core_commits.png")
 
 ## Formation of RCWG
 
-Kick-off
+Kick-off 24 July 2020, > 25 people: R Core, R Foundation, Forwards, R Consortium Diversity & Inclusion Group, R-Ladies, Python Core + wider R community. 
 
-* Supporting infrastructure
-* Learning
-* Doing
+. . .
 
-# Supporting infrastructure {.inverse}
+How to foster a larger, more diverse community of contributors?
+
+. . .
+
+* Supportive infrastructure
+* Opportunities to learn
+* Opportunities to contribute
+
+# Supportive infrastructure {.inverse}
 
 ## Improved communications
 
@@ -48,25 +51,25 @@ Kick-off
 
 :::: {.columns}
 
-::: {.column width="60%"}
+::: {.column width="65%"}
 <a href="https://contributor.r-project.org/">
   <img src="images/R_Contributor_Site.png">
 </a>
 :::
 
-::: {.column width="40%"}
-* Improved website on R-project.org domain
-    * Joining page for Slack
-    * Links to R Dev Guide and useR! tutorials
-    * Event calendar
-* New Twitter account: [@_R_Contributors](https://twitter.com/R_Contributors)
-:::
+::: {.column width="35%"}
 
+ * Joining page for Slack
+ * Event calendar
+ * Video tutorials
+ * Novice-friendly documentation
+:::
 ::::
+
+[@R_Contributors@hachyderm.io](https://hachyderm.io/@R_Contributors), [@_R_Contributors](https://x.com/R_Contributors) on X/Twitter.
 
 ## Weblate interface
 
-Set up summer 2022 by Gergely Daróczi  
 <https://translate.rx.studio>
 
 :::: {.columns}
@@ -82,47 +85,60 @@ knitr::include_graphics('images/weblate.png')
 :::
 
 ::: {.column width="40%"}
-- Web interface makes it easy to work on translations for R
-- [useR! 2022 Poster](https://daroczig.github.io/slides/2022-06-22-useR_2022_poster-Gergely_Daroczi-Internationalization_of_R_packages_with_r18r.pdf)
+- Web interface to contribute translations
+- Prototype by Gergely Daróczi: [useR! 2022 Poster](https://daroczig.github.io/slides/2022-06-22-useR_2022_poster-Gergely_Daroczi-Internationalization_of_R_packages_with_r18r.pdf)
+- Recommended packages and Mac GUI added in 2024
 :::
 
 ::::
 
-## GSoC 2023: R Dev Container
+## R Dev Container
 
-Atharva Shirdhankar, supervised by Heather Turner and James Tripp
 <https://github.com/r-devel/r-dev-env/>
-
-- GitHub Codespace: 
-   - Linux container set up to build R from source
-   - VS Code IDE for working with R and C files
-- Documentation
-   - README on GitHub repo
-   - Markdown included in container for copy-paste
-   
-# Learning {.inverse}
-
-## R Development Guide
-
-R Foundation funded 12 week project. Saranjeet Kaur Bhogal (technical writer), Heather Turner and Michael Lawrence (supervisors).  
-<https://contributor.r-project.org/rdevguide/>
 
 :::: {.columns}
 
 ::: {.column width="60%"}
-![](images/r_dev_guide.png)
+```{r, out.width = "90%"}
+#| echo: false
+#| eval: true
+#| fig-align: "center"
+#| fig-alt: "Screenshot of R Dev Container running in GitHub Codespaces."
+knitr::include_graphics('images/r_dev_container.png')
+```
 :::
 
 ::: {.column width="40%"}
-* Novice-friendly
-* Installing R-devel on Windows
-* Bug Tracking
-* Bug Review ([R Can Use Your Help: Reviewing Bug Reports](https://blog.r-project.org/2019/10/09/r-can-use-your-help-reviewing-bug-reports/))
+- GitHub Codespace with prerequisites for building R
+- VS Code IDE for working with R/C files
+- Docs to step through contributor workflow
+:::
+::::
+Product of GSoC 2023 & 2024 projects w/ Atharva Shirdhankar.
+   
+# Opportunities to learn {.inverse}
+
+## R Development Guide
+
+<https://contributor.r-project.org/rdevguide/>
+
+:::: {.columns}
+
+::: {.column width="55%"}
+![](images/r_dev_guide.png)
 :::
 
+::: {.column width="45%"}
+* Installing R-devel from source
+* Reporting and reviewing bugs
+* Contributing code, documentation, translations
+* Product of R Foundation & Google Season of Docs
+:::
 ::::
 
-## Collaboration Campfires
+[useR! 2024 virtual talk](https://youtu.be/vit06hXFw3M?list=PL77T87Q0eoJhsC203plZ1H4p21AGrM9rl) by Saranjeet Kaur Bhogal & Lluís Revilla 
+
+## Collaboration Campfires, Feb-May 2022
 
 [Code for Science & Society Digital Infrastructure Incubator project](https://www.codeforsociety.org/incubator/projects/building-community-around-the-r-development-guide)
 with Saranjeet Kaur Bhogal
@@ -142,43 +158,33 @@ with Saranjeet Kaur Bhogal
 
 ::::
 
-## C book club for R contributors 
+## C Study Group
 
-<https://github.com/r-devel/c-book-club/>
+For existing/aspiring R contributors wanting to learn/refresh their C programming skills.
 
-- For existing/aspiring R contributors wanting to learn/refresh their C programming skills.
-- Every two weeks, two time zones
-- Main reading: [Modern C](https://gustedt.gitlabpages.inria.fr/modern-c/) by Jens Gustedt
-- Exercises from [C Programming: A Modern Approach](http://knking.com/books/c2/) by K. N. King.
-- Slides available for chapters 1-13
+Two incarnations:
 
-## useR! 2021 tutorials
+* [Book Club](https://github.com/r-devel/c-book-club/tree/main), May - August 2023
+    - Main reading: [Modern C](https://gustedt.gitlabpages.inria.fr/modern-c/) by Jens Gustedt
+    - Exercises from [C Programming: A Modern Approach](http://knking.com/books/c2/) by K. N. King.
+* [Study Group](https://contributor.r-project.org/events/c-study-group-2024/), January - June 2024
+    - C sessions of [CS50](https://cs50.harvard.edu/x/2024/)
+    - Chapter from [Deep R Programming ](https://deepr.gagolewski.com/chapter/310-compiled.html) on R’s C API
+    
+Check out Ella Kaye's [C for R Users](https://sched.co/1c8zS) talk at 14:15 in Salzburg II!
 
-:::: {.columns}
+## Tutorials
 
-::: {.column width="50%"}
+Run at useR! 2021 and again this year
 
-[Contributing to R](https://contributor.r-project.org/tutorials/contributing-to-r), Gabriel Becker and Martin Maechler, useR! 2021. 2h15 video (or 1h30 abridged).
+* [Contributing to R](https://contributor.r-project.org/tutorials/contributing-to-r)
+   - Perspective of Gabe Becker as a long-term contributor
+   - Exercises analysing past R bugs
+* [Translating R to your Language](https://contributor.r-project.org/tutorials/translating-r-to-your-language/)
+   - `gettext` infrastructure that R uses to internationalize messages
+   - [2024 virtual tutorial](https://youtu.be/ABdyZW8yGS4?list=PL77T87Q0eoJhEvMRMX8o5JVHgy7srQzSJ) focused on Weblate interface
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/CZmldTOdlRM" title="Contributing to R" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-:::
-
-::: {.column width="50%"}
-
-[Translating R to your Language](https://contributor.r-project.org/tutorials/translating-r-to-your-language/), Michael Chirico and Michael Lawrence, useR! 2021. 1h30 video. 
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/S3Qhqf9u6ao" title="Translating R to your language" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-
-</iframe>
-
-:::
-
-::::
-
-Follow the links for further detail, with slides and exercises.
-
-# Doing {.inverse}
+# Opportunities to contribute {.inverse}
 
 ## R Contribution Office Hours
 
@@ -230,9 +236,35 @@ Follow the links for further detail, with slides and exercises.
 
 ## R Dev Days
 
+- 1-day versions of the R Project Sprint
+
+- 1st event @ Imperial, 26 April 2024 (prior to London satRday)
+   - 12 people attended (open registration)
+   - Worked on 6 issues: patches for 3, diagnoses/draft for remainder
+   
+- Next @ PLUS, 12 July 2024 (after useR! 2024)
+    - Expecting > 40 (contributors by application + 7 from R Core Team)
+
 ## Future Plans
 
+- Further R Dev Days as satellite to conferences:
+   - posit::conf(2024), Seattle, USA (by invitation)
+   - RSECon24, Newcastle, UK (open to conference participants)
+   - Shiny in Production, Newcastle, UK (open registration TBA)
+
+- Ongoing office hours
+
+- C Study Group 2025
+   
+
 ## Get involved
+
+[<https://contributor.r-project.org>]{.larger150}
+
+ - Slack group
+ - R Dev Guide, Translation Team Docs, Tutorial Videos
+ - Events (also Meetup, mailing list)
+ - R Contribution Working Group
 
 
 ```{=html}
