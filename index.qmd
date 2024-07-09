@@ -5,6 +5,8 @@ date: 2024-07-10
 date-format: long
 format: 
   warwickpres-revealjs: 
+    width: 1280
+    height: 720
     title-slide-attributes: 
       data-background-image: warwick-logo-white.png
       data-background-size: 15%
@@ -20,7 +22,10 @@ format:
 * [Moving Forwards: Greater Equity and Inclusion in the R Community](https://www.heatherturner.net/talks/celebration2020/), celebRation 2020
 
 * [useR! 2020 panel](https://youtu.be/X_eDHNVceCU?list=PL4IzsxWztPdltBEpbd5B0jLJS13xAyq5n&t=7232)
+
+:::{.center-h}
 ![](images/rcore.png){alt="11 members of R Core on a video call for useR! 2020 R Core Panel"}
+:::
 
 ## The long view: R Core Commits 1997 - 2024
 
@@ -29,13 +34,15 @@ format:
 knitr::include_graphics("figures/r_core_commits.png")
 ```
 
-## Formation of RCWG
+## Formation of R Contribution Working Group (RCWG)
 
-Kick-off 24 July 2020, > 25 people: R Core, R Foundation, Forwards, R Consortium Diversity & Inclusion Group, R-Ladies, Python Core + wider R community. 
+Community meeting 24 July 2020
+
+ * &gt;25 people: R Core, R Foundation, Forwards, R Consortium Diversity & Inclusion Group, R-Ladies, Python Core + wider R community. 
 
 . . .
 
-How to foster a larger, more diverse community of contributors?
+[How to foster a larger, more diverse community of contributors?]{.larger125 style="color:#6DCDB8;"}
 
 . . .
 
@@ -47,17 +54,16 @@ How to foster a larger, more diverse community of contributors?
 
 ## Improved communications
 
-<https://contributor.r-project.org>
-
 :::: {.columns}
 
-::: {.column width="65%"}
+::: {.column width="60%"}
 <a href="https://contributor.r-project.org/">
   <img src="images/R_Contributor_Site.png">
 </a>
 :::
 
-::: {.column width="35%"}
+::: {.column width="40%"}
+<https://contributor.r-project.org>
 
  * Joining page for Slack
  * Event calendar
@@ -66,7 +72,7 @@ How to foster a larger, more diverse community of contributors?
 :::
 ::::
 
-[@R_Contributors@hachyderm.io](https://hachyderm.io/@R_Contributors), [@_R_Contributors](https://x.com/R_Contributors) on X/Twitter.
+Social media: [@R_Contributors@hachyderm.io](https://hachyderm.io/@R_Contributors), [@_R_Contributors](https://x.com/R_Contributors) on X/Twitter.
 
 ## Weblate interface
 
@@ -110,17 +116,16 @@ knitr::include_graphics('images/r_dev_container.png')
 
 ::: {.column width="40%"}
 - GitHub Codespace with prerequisites for building R
-- VS Code IDE for working with R/C files
+- VS Code IDE to work on R/C files
 - Docs to step through contributor workflow
+- Product of GSoC 2023 & 2024 projects w/ Atharva Shirdhankar.
 :::
 ::::
-Product of GSoC 2023 & 2024 projects w/ Atharva Shirdhankar.
+
    
 # Opportunities to learn {.inverse}
 
 ## R Development Guide
-
-<https://contributor.r-project.org/rdevguide/>
 
 :::: {.columns}
 
@@ -129,6 +134,8 @@ Product of GSoC 2023 & 2024 projects w/ Atharva Shirdhankar.
 :::
 
 ::: {.column width="45%"}
+<https://contributor.r-project.org/rdevguide/>
+
 * Installing R-devel from source
 * Reporting and reviewing bugs
 * Contributing code, documentation, translations
@@ -140,27 +147,25 @@ Product of GSoC 2023 & 2024 projects w/ Atharva Shirdhankar.
 
 ## Collaboration Campfires, Feb-May 2022
 
-[Code for Science & Society Digital Infrastructure Incubator project](https://www.codeforsociety.org/incubator/projects/building-community-around-the-r-development-guide)
+[Code for Science & Society Digital Infrastructure Incubator](https://www.codeforsociety.org/incubator/projects/building-community-around-the-r-development-guide)
 with Saranjeet Kaur Bhogal
 
 :::: {.columns}
 
-::: {.column width="60%"}
+::: {.column width="50%"}
 - Series of four 90-minute sessions introducing ways to contribute
 - Informal, exploratory, interactive
 - Targeted outreach to people from underrepresented groups
-
+- 10-20 people at each session
 :::
 
-::: {.column width="40%"}
+::: {.column width="50%"}
 ![](images/collaboration-campfires.jpg)
 :::
 
 ::::
 
-## C Study Group
-
-For existing/aspiring R contributors wanting to learn/refresh their C programming skills.
+## C Study Group for R Contributors
 
 Two incarnations:
 
@@ -177,10 +182,10 @@ Check out Ella Kaye's [C for R Users](https://sched.co/1c8zS) talk at 14:15 in S
 
 Run at useR! 2021 and again this year
 
-* [Contributing to R](https://contributor.r-project.org/tutorials/contributing-to-r)
+* [Contributing to R](https://contributor.r-project.org/tutorials/contributing-to-r), with Martin Maechler
    - Perspective of Gabe Becker as a long-term contributor
    - Exercises analysing past R bugs
-* [Translating R to your Language](https://contributor.r-project.org/tutorials/translating-r-to-your-language/)
+* [Translating R to your Language](https://contributor.r-project.org/tutorials/translating-r-to-your-language/), with Michael Lawrence
    - `gettext` infrastructure that R uses to internationalize messages
    - [2024 virtual tutorial](https://youtu.be/ABdyZW8yGS4?list=PL77T87Q0eoJhEvMRMX8o5JVHgy7srQzSJ) focused on Weblate interface
 
@@ -190,16 +195,38 @@ Run at useR! 2021 and again this year
 
 :::: {.columns}
 
-::: {.column width="40%"}
+::: {.column width="50%"}
 ![](images/office-hours.png)
 :::
 
-::: {.column width="60%"}
+::: {.column width="50%"}
+
 - Started November 2022
 - Monthly, 2nd Thursday
-- Two time-zones (10am and 5:30pm UTC)
+- Two time-zones (10am and 5:30pm UK)
 - Informal opportunity to work on any aspect of contributing to R
-- Has led to [bug fixes](https://bugs.r-project.org/show_bug.cgi?id=16158)
+- Has led to [patches and bug fixes](https://bugs.r-project.org/buglist.cgi?bug_status=__all__&content=%22office%20hour%22&list_id=31728&order=Importance&query_format=specific)
+:::
+::::
+
+## LatinR translation hackathons
+ 
+:::: {.columns}
+
+::: {.column width="50%"}
+October 2022, Online
+
+ - Led by Beatriz Milz, Ángela Sanzo, Macarena Quiroga
+ - 10 participants ~500 translations
+ 
+October 2023, Uruguay
+
+ - Led María Nanton and Pao Corrales
+ - Spanish translation coverage increased from 40% to 42%
+:::
+
+::: {.column width="50%"}
+![](images/latinR_translation.jpg)
 :::
 
 ::::
@@ -207,32 +234,49 @@ Run at useR! 2021 and again this year
 ## Bug BBQ (useR! 2022)
 
 ::::{.columns}
-::: {.column width="60%"}
-- Global, online, 24-hour event to work on open bugs.
-- ~20 participants, new and experienced - a good range
-  - [Good for collaboration, learning experience]{.smaller75}
-- 22 bugs identified for event
-  - [9 not addressed, 3 unresolved, 10 fixed or almost fixed]{.smaller75}
-  - [Good progress on bugs and prompt to act]{.smaller75}
-- [Full report](https://github.com/r-devel/rcontribution/blob/main/bug_bbq/Bug_BBQ_retrospective.md)
+::: {.column width="50%"}
+</br>
 
+- Global, online, 24-hour event to work on open bugs.
+- ~20 participants, from new to R Core 
+- 22 selected code/documentation bug reports
+   - 10 fixed or almost fixed
+- [Report on GitHub](https://github.com/r-devel/rcontribution/blob/main/bug_bbq/Bug_BBQ_retrospective.md)
 :::
 
-::: {.column width="40%"}
+::: {.column width="50%"}
 ![This image was created by [Sciberia](https://www.scriberia.com) for The Turing Way community and is used under CC-BY license.](images/bug-catching.jpg)
 :::
 
 ::::
 
+::: {.notes}
+  - Good for collaboration, learning experience
+  - 22 bugs identified for event
+  - Good progress on bugs and prompt to act
+:::
+
 ## R Project Sprint 2023
 
-- Collaborate on contributions to base R
-- ~50 participants, range of experience
-- A diverse group
-- Several have engaged with past RCWG events and initiatives
-- Taking place at The University of Warwick, Aug 30--Sept 1st 2023
-- <https://contributor.r-project.org/r-project-sprint-2023/>
-- Will report after the event
+:::: {.columns}
+
+::: {.column width="60%"}
+- 3-day collaborative event
+- 11 R Core + > 40 selected participants
+   - Diverse experience and demographics
+- Range of activities
+   - Localization (translation, docs & Weblate admin)
+   - R/C Code (bugs, refining, extending, roadmaps)
+   - Documentation
+- ~2000 translations, 16 issues closed within 2 months
+    - [Report in the R Journal](https://github.com/r-devel/rcontribution/blob/main/bug_bbq/Bug_BBQ_retrospective.md)
+:::
+
+::: {.column width="40%"}
+![](images/Rlogo.png)
+:::
+
+::::
 
 ## R Dev Days
 
@@ -241,9 +285,12 @@ Run at useR! 2021 and again this year
 - 1st event @ Imperial, 26 April 2024 (prior to London satRday)
    - 12 people attended (open registration)
    - Worked on 6 issues: patches for 3, diagnoses/draft for remainder
+   - [Report on GitHub](https://github.com/r-devel/r-dev-day/blob/main/reports/imperial2024.md)
    
 - Next @ PLUS, 12 July 2024 (after useR! 2024)
-    - Expecting > 40 (contributors by application + 7 from R Core Team)
+    - Expecting > 40 (contributors by application + 8 from R Core Team)
+    
+- [Shared repo of issues](https://github.com/r-devel/r-dev-day/issues)
 
 ## Future Plans
 
@@ -256,15 +303,14 @@ Run at useR! 2021 and again this year
 
 - C Study Group 2025
    
+# <https://contributor.r-project.org> {.inverse .larger150}
 
-## Get involved
-
-[<https://contributor.r-project.org>]{.larger150}
-
+:::{.notes}
  - Slack group
  - R Dev Guide, Translation Team Docs, Tutorial Videos
  - Events (also Meetup, mailing list)
  - R Contribution Working Group
+:::
 
 
 ```{=html}
